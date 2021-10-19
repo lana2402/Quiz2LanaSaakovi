@@ -3,6 +3,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -18,7 +19,9 @@ public class Quiz2Test{
     @Test
     public void firstTest(){
         WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
+        ChromeOptions chrome = new ChromeOptions();
+        chrome.addArguments("--headless");
+        WebDriver driver = new ChromeDriver(chrome);
 
         driver.get("https://demoqa.com/progress-bar");
         driver.manage().window().maximize();
@@ -37,7 +40,9 @@ public class Quiz2Test{
         @Test
         public void SecondTest() {
             WebDriverManager.chromedriver().setup();
-            WebDriver driver = new ChromeDriver();
+            ChromeOptions chrome = new ChromeOptions();
+            chrome.addArguments("--headless");
+            WebDriver driver = new ChromeDriver(chrome);
 
             driver.get("http://webdriveruniversity.com/Dropdown-Checkboxes-RadioButtons/index.html");
             driver.manage().window().maximize();
@@ -71,7 +76,9 @@ public class Quiz2Test{
 
     @Test
     public void ThirddTest(){  WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
+        ChromeOptions chrome = new ChromeOptions();
+        chrome.addArguments("--headless");
+        WebDriver driver = new ChromeDriver(chrome);
 
         driver.get("http://the-internet.herokuapp.com/iframe");
         driver.manage().window().maximize();
